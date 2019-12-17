@@ -1,5 +1,5 @@
 {
-    "name": "clue/soap-react",
+    "name": "paxport/soap-react",
     "description": "Simple, async SOAP webservice client library, built on top of ReactPHP",
     "keywords": ["SOAP", "SoapClient", "WebService", "WSDL", "ReactPHP"],
     "homepage": "https://github.com/clue/reactphp-soap",
