@@ -153,12 +153,16 @@ class Client
      * Instantiate a new SOAP client for the given WSDL contents.
      *
      * @param Browser     $browser
-     * @param string|null $wsdlContents
+     * @param             $wsdl
      * @param array       $options
+     * @param string|null $wsdlContents
+     *
      */
-    public function __construct(Browser $browser, $wsdlContents, array $options = array())
+    public function __construct(Browser $browser, $wsdl, array $options = array(), $wsdlContents = '')
     {
-        $wsdl = $wsdlContents !== null ? 'data://text/plain;base64,' . base64_encode($wsdlContents) : null;
+        if (!empty($wsdlContents)) {
+            $wsdl = $wsdlContents !== null ? 'data://text/plain;base64,' . base64_encode($wsdlContents) : null;
+        }
 
         // Accept HTTP responses with error status codes as valid responses.
         // This is done in order to process these error responses through the normal SOAP decoder.
